@@ -12,7 +12,8 @@ def command_validation(command: str) -> None:
 def copy_file(command: str) -> None:
     try:
         command_validation(command)
-    except Exception:
+    except Exception as ex:
+        print(f"Your command isn't correct, here is the error: {ex}")
         return
 
     origin_file_name = command.split(" ")[1]
